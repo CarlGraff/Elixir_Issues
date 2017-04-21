@@ -26,10 +26,10 @@ defmodule Issues.TableFormatter do
       for row <- rows, do: printable(row[header])
     end
   end
-  
+
   def printable(str) when is_binary(str), do: str
   def printable(str), do: to_string(str)
- 
+
   def widths_of(columns) do
     for column <- columns, do: column |> map(&String.length/1) |> max
   end
